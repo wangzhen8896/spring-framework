@@ -1,0 +1,18 @@
+description = "Spring Context"
+
+apply plugin: "java"
+
+repositories {
+	mavenCentral()
+}
+
+dependencyManagement {
+	imports {
+		mavenBom "io.projectreactor:reactor-bom:${reactorVersion}"
+	}
+}
+
+dependencies {
+	compile(project(":spring-context"))
+	compile group: 'javax.annotation', name: 'javax.annotation-api', version: '1.3.2'
+}
